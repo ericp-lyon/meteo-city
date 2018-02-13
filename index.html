@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+    <title>Formation JS</title>
+</head>
+
+<body style="background: -webkit-linear-gradient(top, rgba(159,234,228,1) 33%,rgba(195,216,37,1) 48%,rgba(195,216,37,1) 55%,rgba(78,170,17,1) 82%,rgba(85,214,59,1) 100%);" >
+    <!-- material-->
+    <link rel="stylesheet" type="text/css" href="./node_modules/material-design-lite/material.min.css">
+    <script type="text/javascript" src="./node_modules/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/material-design-icons/iconfont/material-icons.css">
+    <!-- web designer m2i-->
+    <link rel="stylesheet" type="text/css" href="./node_modules/ui-design/dist/ui-design.css">
+    <script type="text/javascript" src="./node_modules/ui-design/dist/ui-design.js"></script>
+    <link rel="stylesheet" type="text/css" href="./dist/index.css">
+   
+
+
+
+
+
+    <!-- Uses a transparent header that draws on top of the layout's background -->
+     <style >
+        .demo-layout-transparent {
+            background: url('') center / cover;
+        }
+
+        .demo-layout-transparent .mdl-layout__header,
+        .demo-layout-transparent .mdl-layout__drawer-button {
+            /* This background is dark, so we set text to white. Use 87% black instead if
+             your background is light. */
+            color: rgb(12, 12, 11)
+        }
+    </style> 
+    <!-- MDL Progress Bar with Indeterminate Progress -->
+
+   
+
+    <city class="ui col-12 left mdl-layout mdl-js-layout day" ></city>
+<!-- @component meteopolution -->
+<meteopolution class="active frameable mdl-layout__content day">
+  <!-- @component temperature -->
+  <temperature class="ui col-12 col-v-max-4 grey-50 day" ></temperature>
+  <!-- @component climat -->
+  <climat class="mdl-layout__content"></climat>
+  <!-- @component polution -->
+  <polution class="mdl-layout__content"></polution>
+</meteopolution>
+
+
+    <main class="mdl-layout__content">
+
+    </main>
+
+    </div>
+       
+
+
+
+    <script src="./dist/index.js"></script>
+    <!-- compatibility pour les 2 balises que nous avons créé en les créant dans un tableau-->
+
+    <script>
+        var elements = ["meteopolution", "temperature", "city", "climat", "polution",];
+        for (var key in elements) {
+            window.document.createElement(elements[key]);
+        }
+    </script>
+    <!-- faire une requete  -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+    <script> 
+
+
+    </script>
+
+    <!-- compatibility -->
+    <style>
+        city,
+        meteopolution,
+        climat,
+        polution,
+         temperature {
+            display: block;
+            width: 100%;
+        }
+    </style>
+
+
+
+</body>
+
+
+
+</html>
