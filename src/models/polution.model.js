@@ -15,7 +15,7 @@ export class Polution extends Model {
 
             aqi: 0,
             pm25: 0,
-            ozone: 0,
+            o3: 0,
         });
     }
 }
