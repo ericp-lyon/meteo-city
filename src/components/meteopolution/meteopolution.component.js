@@ -9,7 +9,7 @@ export class Meteopolution extends MetaComponent {
 
  /**
  * @constructor
- * @param {Component} meteopolution
+ * 
  */
     constructor (
         climat,
