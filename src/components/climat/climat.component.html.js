@@ -1,4 +1,4 @@
-export default () => {
+export default (climat) => {
 
     return `
     <span class="ui col-1 col-v-2 v-center "></span>
@@ -6,17 +6,23 @@ export default () => {
     <p class="ui col-4 ">
         <span class="light icon material-icons"> 	bubble_chart</span>
         <br>
-        <span></span>
+        <span>${climat.get("humidity")
+                ? climat.get("humidity") + " %"
+                : "-"  }</span>
     </p>
     <p class="ui col-4">
         <span class="light icon material-icons">toys</span>
         <br>
-        <span>6.22m/s</span>
+        <span>${climat.get("wind")
+        ? climat.get("wind") + " m/s"
+        : "-"  }</span>
     </p>
     <p class="ui col-4">
         <span class="light icon material-icons">import_export</span>
         <br>
-        <span>2°</span>
+        <span>${climat.get("temperature").get("max")
+        ? climat.get("temperature").get("max") - climat.get("temperature").get("min") +" °"
+        : "-"  }</span>
     </p>
     </div>
     `;
