@@ -1,4 +1,4 @@
-export default () => {
+export default (polution) => {
 
     return `
 
@@ -10,7 +10,9 @@ export default () => {
             </span>
             <div class="ui col-3 col-sm-2 right">
                 <span class="ui lighter">
-                    30
+                ${polution.get("aqi")
+                ? polution.get("aqi")
+                : "-"} 
                 </span>
                 <span class="ui smaller icon material-icons"> 
                     thumb_up
@@ -25,7 +27,9 @@ export default () => {
         </span>
             <div class="ui col-3 col-sm-2 col-2 right">
                 <span class="ui lighter">
-                    30
+                ${polution.get("pm25")
+                ? polution.get("pm25")
+                : "-"}
                 </span>
                 <span class="ui smaller icon material-icons">
                     thumb_down
@@ -40,7 +44,9 @@ export default () => {
         </span>
             <div class="ui col-3 col-sm-2 right">
                 <span class="ui lighter">
-                    22.8
+                ${polution.get("o3")
+                ? polution.get("o3")
+                : "-"} 
                 </span>
                 <span class="ui smaller icon material-icons">
                     thumb_up
