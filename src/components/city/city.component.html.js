@@ -1,5 +1,5 @@
 export default (city) => {
-console.log(city)
+
     return `
     ${city.get("name") 
     ? city.get("name")
