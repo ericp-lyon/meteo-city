@@ -8,47 +8,34 @@ import { Climat as ClimatModel } from "./models/climat.model";
 import { Temperature as TemperatureModel } from "./models/temperature.model";
 import { Polution as PolutionModel } from "./models/polution.model";
 import { City as CityModel } from "./models/city.model";
+import {Weather} from "./hydrators/apis/weather.api.hydrator";
+import { ApiWaqi } from "./models/apis/api-waqi.api.model";
+import { Waqi } from "./hydrators/apis/waqi.api.hydrator";
 
 
-
-//Apis
-let apiOpenWeather = new ApiOpenWeather("27125dda65fd2e71fa64f1f6d50916cc");
 //Models
 let citymodel = new CityModel(
     new PolutionModel,
     new ClimatModel(
     new TemperatureModel
-
     )
 );
 //Components
-let city = new City (citymodel, apiOpenWeather);
-let meteopolution = new Meteopolution(
-    new Temperature,
-    new Climat,
-    new Polution
-);
-//render
-city.render();
-meteopolution.render();
+new City (
+    citymodel,
+    new ApiOpenWeather("27125dda65fd2e71fa64f1f6d50916cc"),
+    new Weather
+).render();
+
+new Meteopolution(
+    new Temperature(citymodel),
+    new Climat(citymodel.get("climat")),
+    new Polution (
+        citymodel.get("polution"),
+        new ApiWaqi ("e7ed518e65b137a4715481431fad65c3a069f216"),
+        new Waqi
+    )
+).render();
 
 
-
-//  console.log(openWeather);
-
-
-
-// let climat = new ClimatModel;
-// climat.set("wind",99);
-// console.log(climat.get("wind"));
-
-//let citymodel = new CityModel;
-// citymodel.set("sunrise", 45);
-// console.log(citymodel.get("sunrise"));
-// let polution = new PolutionModel
-// polution.set("aqi",45);
-// console.log(polution.get("aqi"));
-// let temperature = new TemperatureModel
-// temperature.set("min",30);
-// console.log(temperature.get("min"));
 
