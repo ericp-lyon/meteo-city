@@ -1,5 +1,5 @@
-import {Component} from "./../component.component";
-import {default as template} from "./climat.component.html";
+import { Component } from "./../component.component";
+import { default as template } from "./climat.component.html";
 
 /**
  * @type {Climat}
@@ -7,16 +7,32 @@ import {default as template} from "./climat.component.html";
 
 export class Climat extends Component {
 
- /**
- * @constructor
- */
-    constructor (){
-        
+    /**
+    * @constructor
+    * @param {Model} climat
+    */
+    constructor(climat) {
+
         super();
         this.selector = "climat";
         this.template = template;
+
+        /**
+         * @returns {Model} climat
+         */
+        this.getModel = () => {
+            return climat;
+        }
+        climat.bind(
+            this.render.bind(this)
+        );
+
+    /**
+    * @returns {HTMLElementCollection}
+    */
+    }
+    render() {
+        super.render([this.getModel()]);
     }
 
-
-    
 }
