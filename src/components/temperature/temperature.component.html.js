@@ -1,4 +1,7 @@
-export default () => {
+/**
+ * @param{Model} city
+ */
+export default (city) => {
 
     return `
 
@@ -9,7 +12,7 @@ export default () => {
         <span class="ui icon material-icons">
             flare
         </span>
-            <span class="ui bigger"> <span class="ui bigger"><span class="ui bigger"><span class="ui bigger lighter">9<span class="ui lighter smaller">°</span></span></span></span></span>
+<span class="ui bigger"> <span class="ui bigger"><span class="ui bigger"><span class="ui bigger lighter">${city.get("climat").get("temperature").get("temperature") ? city.get("climat").get("temperature").get("temperature") :"" }<span class="ui lighter smaller">°</span></span></span></span></span>
         <span class="ui col-12 smaller">Clear</span>
     </div>
         
